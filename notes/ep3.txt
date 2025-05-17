@@ -1,0 +1,16 @@
+npm run start or npm start
+this is the industry standard to use, behind the sece it will execute it 
+
+React.CreateElement -> ReactElement JS object -> HTML Element rendred
+JSX - > transpiled to react element -> React.CreateElement -> ReactElement JS object -> HTML Element rendred
+Bable - takes the code and transpiles the JSX before it reaches the JS engin, that the react will understand
+
+if you have to give attributes you have to give it as camel case
+if we are writting jsx in multiple line we have to wrap it in ()
+
+REACT COMPONENT 
+- class based component 
+- functional component - its function returs a jsx code / react element (jsx)
+component composition 
+
+

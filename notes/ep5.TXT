@@ -1,0 +1,28 @@
+ep5 
+
+| Feature              | Named Export                    | Default Export                  | `* as` Export                    |
+| -------------------- | ------------------------------- | ------------------------------- | -------------------------------- |
+| Syntax           | `export const name = ...;`      | `export default value;`         | `import * as module from 'file'` |
+| Import style     | `import { name } from './file'` | `import name from './file'`     | `module.name`                    |
+| Multiple exports | ✅ Yes                          | ❌ Only one per file           | ✅ Imports all named exports     |
+| Use case         | Exporting multiple things       | When one main thing is exported | Group and namespace all exports  |
+
+import mainFunc from './utils';        // Default import
+import { add, subtract } from './utils'; // Named import
+import * as utils from './utils';       // * as import
+utils.add();
+
+CONFIG FILE 
+> Stores API URLs, constants, environment variables, etc.
+> Keeps your code DRY (Don't Repeat Yourself)
+> Makes it easy to update values in one place
+> Improves project maintainability and environment management
+
+HOOKS
+React Hooks are special functions that let you "hook into" React features like state and lifecycle methods in functional components.
+
+USESTSTE
+- whenever the state variable changes react will rerendering the component
+To store UI data (like form inputs, toggles, counters, etc.)
+To re-render components when data changes
+To build interactive UIs with dynamic behavior

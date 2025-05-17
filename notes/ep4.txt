@@ -1,0 +1,10 @@
+Properties 
+- Passing Properties to the components is something like passing arguments to the functions
+- json viewer extension
+- config driven UI : which means controling the ui based the data which is given to it
+- KEYS - Keys help React identify which items have changed, are added, or are removed.
+We don’t recommend using indexes for keys if the order of items may change.
+
+folder structure
+export and import
+

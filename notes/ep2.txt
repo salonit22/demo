@@ -1,0 +1,58 @@
+NPM - is everything but not node package manager (Hahaa) ❤️ 
+NPM dose not have a full form - it manages package but it dose not standard for node package manager
+its a standard package manager, huge package manager every package is added over here
+
+PACKAGE.json - configuration for NPM
+npm will take care the version of the package 
+
+ DEV dependency - developement phase 
+ normal dependency is used in production also 
+
+ parceler is junkies not used in production so we can download as dev dependency
+ npm install -D parcel
+
+ caret and tilde in package.jason (^ ~ major.patch.minor)
+ these two are used to sepiciy the versions for the dependency and control how updateds are handled
+ caret allows patch and minor updateds
+ tilde allows minor updated only 
+
+ package.json & package.lock.json 
+ it keeps track of all the dependency exact dependency that is used
+ intergrity : its a hash file which checks the code in development and in production
+
+ .gitignore 
+ node modules has lot of changes all those changes are not need to pushed into gitignore
+ /node_module will ignore this 
+if have package.json and package.lock.json we can regenerate it - npm install
+
+------------------------------ PART 2 ----------------------------------------------------
+npx parcel index.html 
+when we do npm we are just calling the command of npm
+npx means excuting a package 
+
+we have to make the file as type = 'module' to get rid of this error
+import react and react dom 
+parcel automatically reloads the browser
+parcel.cache will keep the file, so inital build will take more time compared to next builds
+- dev build
+- local server 
+- HMR hot module replacement 
+- File watching algorithm - written in cpp
+- caching - faster build 
+- Image optimization
+- bundling
+- Minification
+- compress 
+- code splitting 
+- consisten hashing
+- differential bundiling
+- Error handling
+-HTTPs
+- Tree shaking - remove unused code 
+- create different build for dev and production (npx parcel build index.html)
+
+https://parceljs.org/
+
+Browserlist - u can specify what version it shoul 100% work
+https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+
