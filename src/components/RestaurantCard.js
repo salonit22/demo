@@ -1,6 +1,12 @@
+import {useNavigate} from 'react-router';
+
 const RestaurantCard = (props) => {
+    const navigate = useNavigate();
+    const restMenu = () => {
+        navigate(`/restaurant/${props.restData.info.id}`);
+    }
     return (
-        <div className="res-card"> 
+        <div className="res-card" onClick={restMenu}> 
             <img className="res-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+props.restData.info.cloudinaryImageId}></img>
             <h2 className="res-Name">{ props.restData.info.name}</h2>
             <div className="res-badge">

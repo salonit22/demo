@@ -1,0 +1,28 @@
+Monolith architecture
+ API, UI,AUTH,DB,SMS service in same project
+ if any change to one part we have to build the whole project , bulk project
+
+Microservice architecture
+ we have different services for different jobs
+ API service, UI service, AUTH service, Email notification service, DB service
+ these are micro service combines to form big app
+ they talk to each other based on use case 
+ SEPERATION OF CONSENT - It follows single responsibilty principle 
+ In project backend is working seperatly, UI is working seperatly they sepratly have ther builds
+
+ How do these service intract each other?
+ all the service have different ports and deployed in the same domain name 
+
+ Api rendering approach 
+ loads - > api - > render 
+ loads - > inital render - > api - > render  (better approch )
+this take the less amount of time to render the page and it loads the data as fast 
+
+UseEffect 
+It is a callback function which take two args 
+it is called after the component is rendred
+
+SHIMMER UI 
+if the API is taking some time load shimmer ui after load it with actual data
+- optional chaning 
+- conditional rendering

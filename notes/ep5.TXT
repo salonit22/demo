@@ -21,7 +21,7 @@ CONFIG FILE
 HOOKS
 React Hooks are special functions that let you "hook into" React features like state and lifecycle methods in functional components.
 
-USESTSTE
+useState
 - whenever the state variable changes react will rerendering the component
 To store UI data (like form inputs, toggles, counters, etc.)
 To re-render components when data changes
