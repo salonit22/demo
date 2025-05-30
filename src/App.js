@@ -4,7 +4,7 @@ import Header from "./components/Header"
 import Body from "./components/Body"
 import { createBrowserRouter,Outlet,RouterProvider } from "react-router"
 import Contact from "./components/Contact"
-import About from "./components/about"
+import About from "./components/About"
 import Menu from "./components/Menu"
 import Error from "./components/Error"
 
