@@ -1,8 +1,11 @@
 
-
+import User from "./User"
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+       <User name = {'saloni'}/>
+    </div>
+
   )
 }
 

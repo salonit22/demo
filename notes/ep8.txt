@@ -1,0 +1,3 @@
+class based component
+
+https://namastedev.com/blog/why-we-write-superprops-in-react-class-based-component-2/#comments

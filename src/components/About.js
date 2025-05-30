@@ -1,9 +1,12 @@
+import User from "./User"
 
-
-const about = () => {
+const About = () => {
   return (
-    <div>about</div>
+    <div>
+      <h1>about</h1>
+      <User name = {'saloni'}/>
+    </div>
   )
 }
 
-export default about
+export default About
