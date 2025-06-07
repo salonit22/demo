@@ -1,19 +1,12 @@
 
 import { useEffect,useState } from "react"
 import {useParams} from "react-router"
+import UseApiFetch from "../utils/UseApiFetch";
 
 const Menu = () => {
-const [menudatacard, setMenudatacard] = useState([])
 const {id} = useParams();
-useEffect(() =>{
-    fetchData()
-},[])
- const fetchData = async () =>{
-    const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.0361755&lng=77.0141536&restaurantId="+id+"&submitAction=ENTER");
-    const json = await data.json();
-    setMenudatacard(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards);
-   
-}
+
+const menudatacard = UseApiFetch(id);
    
     return (
         <div>

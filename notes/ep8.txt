@@ -1,3 +1,12 @@
 class based component
 
 https://namastedev.com/blog/why-we-write-superprops-in-react-class-based-component-2/#comments
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+| Phase             | Angular (Class-based)                                      | React (Class-based)                      | React (Functional)   
+                    
+| Mount (Init)      | `ngOnInit()`                                               | `constructor()`<br>`componentDidMount()` | `useEffect(() => { ... }, [])`                |
+| Render            | Angular template engine                                    | `render()`                               | JSX in function return                        |
+| Update            | `ngOnChanges()`<br>`ngDoCheck()`<br>`ngAfterViewChecked()` | `componentDidUpdate()`                   | `useEffect(() => { ... }, [deps])`            |
+| After View Init   | `ngAfterViewInit()`                                        | N/A                                      | N/A                                           |
+| Unmount / Destroy | `ngOnDestroy()`                                            | `componentWillUnmount()`                 | `useEffect(() => { return () => {...} }, [])` |
