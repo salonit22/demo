@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotion} from "./RestaurantCard";
 import  restaurantList  from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
@@ -12,13 +12,14 @@ const Body = () => {
     
     const [restaurantList1, setRestaurantList] = useState([])
     const [searchedVal, setSearchedVal] = useState("")
-    const [filterRestaurantList1, setfilterRestaurantList1] = useState("")
+    const [filterRestaurantList1, setfilterRestaurantList1] = useState([])
+    const RestaurantCardWithPromotion = withPromotion(RestaurantCard);
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.971599&lng=77.594566&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch("https://corsproxy.io/?url=https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.0282063&lng=76.981068&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json();
-        console.log(json);
         setRestaurantList(json?.data?.cards[4]?.card?.card?.gridElements.infoWithStyle.restaurants);
         setfilterRestaurantList1(json?.data?.cards[4]?.card?.card?.gridElements.infoWithStyle.restaurants);
+      
     }
     if (restaurantList1.length == 0) {
         return <Shimmer/>
@@ -49,9 +50,8 @@ const Body = () => {
                 }}>Filter</button>
             </div>
             <div className="restaurant-list">
-                
                 {filterRestaurantList1.map((restaurant) => {
-                    return <RestaurantCard key={restaurant.info.id} restData={restaurant} />
+                    return restaurant.info.veg ? <RestaurantCardWithPromotion key={restaurant.info.id} restData={restaurant}/> : <RestaurantCard key={restaurant.info.id} restData={restaurant} />
                 })}
             </div>
         </div>
