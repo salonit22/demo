@@ -15,7 +15,7 @@ const Body = () => {
     const [filterRestaurantList1, setfilterRestaurantList1] = useState([])
     const RestaurantCardWithPromotion = withPromotion(RestaurantCard);
     const fetchData = async () => {
-        const data = await fetch("https://corsproxy.io/?url=https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.0282063&lng=76.981068&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.0282063&lng=76.981068&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json();
         setRestaurantList(json?.data?.cards[4]?.card?.card?.gridElements.infoWithStyle.restaurants);
         setfilterRestaurantList1(json?.data?.cards[4]?.card?.card?.gridElements.infoWithStyle.restaurants);
