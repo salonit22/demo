@@ -1,4 +1,3 @@
-import dineoutImg from '../utils/assets/dineout-282x300.webp';
 
 const About = () => {
   return (

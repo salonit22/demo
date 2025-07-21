@@ -26,8 +26,8 @@ const RestaurantCard = (props) => {
 export const withPromotion = (RestaurantCard) => {
     return(props) => {
         return (
-            <div>
-                <h2 className="bg-green-900 text-white">veg</h2>
+            <div className='relative'>
+                <h2 className="bg-green-600 text-white w-13 p-1 absolute z-1 top-8 left-8 text-center">veg</h2>
                 <RestaurantCard {...props}/>
             </div>
         )
