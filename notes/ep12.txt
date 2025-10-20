@@ -1,0 +1,81 @@
+REDUX
+
+Redux is primarly used for state of the application 
+- NOt an mandatory one but always used with react it works with other frame work also
+- Zusstand gaining popularity
+-  Tow lib
+    -> react Redux 
+    -> react toolkit (smiplifed /latest /newer way) along with react Redux
+
+RTK
+https://redux-toolkit.js.org/introduction/getting-started
+ - redux was complicated
+ - includes lot of packages
+ - too much boilerplate code 
+
+Store -> slices (cart slice, user slices, theme slice) 
+YUO CANNOT DIRECTLY MODIFY THE SLICE 
+
+When click on an (Add) button it dispactes an action it calls the function 
+and that function modified the cart
+
+
+WRITE / READ
+____________________________________________________________
+      dispacthes
+ADD -> ACTION  -> Fn() -> UPDATES the slice of redux store  
+                 reducer
+                                        |
+                                        |
+        UPDATE     <-     SELECTOR    __| 
+    cart component      subscribing 
+                        to the store
+
+_____________________________________________________________
+->  Install lib 
+        - npm install @reduxjs/toolkit 
+        - npm install react-redux
+    
+-> Build store
+        - appStore.js 
+        - const appStore = *configureStore({           - configureStore comes from RTK
+            reducer: {
+                 cart: cartReducer
+                }
+        }) 
+       
+-> Connect the store to app 
+         - provide the store to Application - Provider comes from react-redux
+                <Provider store={appStore}>
+                  ------                        /** Provider is exported from the 
+                  -----                          lib and it take store as a param **/
+                 </Provider> 
+
+-> Create (cart slice)
+        - const cartSlice = *createSlice ({  - createSlice comes from RTK
+            name         : 'cart',                                 /** the createSlice take some config (name/state takes obj),
+            initialState : { items:[] },                           reducer takes action (add/del) which has reducer fn
+            reducers     : {                                   reducer fn take two param (state/action) which modifies the sate **/
+                addItems: (state , action) => {                 
+                    state.items.push(action.payload)
+                },
+                removeItem : (state) => {
+                     state.items.pop()
+                }
+                clearCart : (state) => {
+                    state.items.length = 0
+                }
+            }
+        })
+
+        export cont {addItems,removeItem,clearCart} = cartSLice.actions      /** (When we are using the cartSlice it will retun a big object which something look likes, so we neet to export reducer and actions )
+        export default cartSlice.reducer                                        {actions : (
+                                                                                        addItems    
+                                                                                    ),
+                                                                                reducer} **/
+
+-> Dispatch (Action)
+-> Selector
+        - useSelector() used to subscribe to the store using a selector
+
+-> useDispatch()

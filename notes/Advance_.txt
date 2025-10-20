@@ -1,0 +1,15 @@
+DATA LIVE
+  -> WEB SOCKETS 
+       The connection when two server connnects to each other where they send data to each other any time they want to
+       initial connection takes time, once done it is like shaking hands. Once the connection established it easy to send whenevery wanted
+
+       UI <-> S (No regular interval)
+
+       like zerodha trading apps / whatsApp (order should not change) / live chat
+
+  -> API Pulling 
+        After every interval the UI will pull the data from backend
+        
+        UI <- S (interval)
+
+        like gamil - dose not need to be real time / crickbuzz ( 25s)
